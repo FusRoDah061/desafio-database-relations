@@ -16,10 +16,12 @@ class OrdersProducts {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Order, order => order.id, { eager: true })
+  @ManyToOne(() => Order, order => order.order_products)
+  @JoinColumn({ name: 'order_id' })
   order: Order;
 
-  @ManyToOne(() => Product, product => product.id, { eager: true })
+  @ManyToOne(() => Product, product => product.order_products, { eager: true })
+  @JoinColumn({ name: 'product_id' })
   product: Product;
 
   @Column('uuid')

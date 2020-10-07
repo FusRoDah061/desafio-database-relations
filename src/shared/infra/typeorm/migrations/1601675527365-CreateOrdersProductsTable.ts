@@ -57,7 +57,7 @@ export default class CreateOrdersProductsTable1601675527365
           },
           {
             name: 'OrderId',
-            referencedTableName: 'order',
+            referencedTableName: 'orders',
             referencedColumnNames: ['id'],
             columnNames: ['order_id'],
             onDelete: 'CASCADE',
